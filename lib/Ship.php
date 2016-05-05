@@ -3,24 +3,17 @@
 
 class Ship
 {
-    public $name;
+    private $name;
 
-    public $weaponPower = 0; // default value = 0
+    private $weaponPower = 0; // default value = 0
 
-    public $jediFactor = 0;
+    private $jediFactor = 0;
 
-    public $strength = 0;
-
-
+    private $strength = 0;
 
     public function sayHello()
     {
         return 'Hello World!';
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -57,9 +50,81 @@ class Ship
         }
     }
 
+    /**
+     * @param $givenShip
+     * @return bool
+     */
     public function doesGivenShipHaveMoreStrength($givenShip)
     {
         return ( $givenShip->strength > $this->strength );
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeaponPower()
+    {
+        return $this->weaponPower;
+    }
+
+    /**
+     * @param int $weaponPower
+     */
+    public function setWeaponPower($weaponPower)
+    {
+        $this->weaponPower = $weaponPower;
+    }
+
+    /**
+     * @return int
+     */
+    public function getJediFactor()
+    {
+        return $this->jediFactor;
+    }
+
+    /**
+     * @param int $jediFactor
+     */
+    public function setJediFactor($jediFactor)
+    {
+        $this->jediFactor = $jediFactor;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStrength()
+    {
+        return $this->strength;
+    }
+
+    /**
+     * @param $strength
+     * @throws Exception
+     */
+    public function setStrength($strength)
+    {
+        if ( !is_numeric($strength) ) {
+            throw new Exception('Invalid strength passed: ' . $strength);
+        }
+        $this->strength = $strength;
     }
 }
 
