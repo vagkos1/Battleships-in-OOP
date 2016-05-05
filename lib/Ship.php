@@ -18,6 +18,11 @@ class Ship
         return 'Hello World!';
     }
 
+    public function getName()
+    {
+        return $this->name;
+    }
+
     /**
      * @param Ship $someShip
      */
@@ -33,7 +38,7 @@ class Ship
         echo '<hr>';
     }
 
-    public function getNameAndSpecs($useShortFormat)
+    public function getNameAndSpecs($useShortFormat = false)
     {
         if ( $useShortFormat ) {
             printf( '%s: %s/%s/%s ' ,
@@ -59,22 +64,5 @@ class Ship
 }
 
 
-$myShip = new Ship();
-$myShip->name = 'Jedi Starship';
-$myShip->weaponPower = 10;
 
-$otherShip = new Ship();
-$otherShip->name = 'Imperial Shuttle';
-$otherShip->weaponPower = 5;
-$otherShip->strength = 50;
-
-Ship::printShipSummary($myShip);
-echo '<hr>';
-Ship::printShipSummary($otherShip);
-
-if ( $myShip->doesGivenShipHaveMoreStrength($otherShip) ){
-    echo $otherShip->name . ' has more strength';
-} else {
-    echo $myShip->name . ' has more strength';
-}
 
