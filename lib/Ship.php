@@ -11,6 +11,19 @@ class Ship
 
     private $strength = 0;
 
+    private $underRepair;
+
+    public function __construct($name)
+    {
+        $this->name = $name;
+        $this->underRepair = mt_rand(1, 100) < 30;  // 30% chance of being broken
+    }
+
+    public function isFunctional()
+    {
+        return !$this->underRepair;
+    }
+
     public function sayHello()
     {
         return 'Hello World!';
