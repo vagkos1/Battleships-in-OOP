@@ -1,11 +1,21 @@
 <?php
 
+// Through the form here in index.php (action="battle.php") the action is transferred to battle.php
+// There, 4 variables are passed, ship1_name, ship2_name and their quantities ship1_quantity and ship2_quantity
+// Apart from the initial GET to index.php, there are also redirects here with some error messages passed in
+// in case of errors (battle.php initiates these redirects after it checks whether the 4 POST[] variables are passed.)
+// in case there is such a redirection, the error message is simply displayed on top.
+// Lastly, Bootstrap is used as a basis fo the UI!
+
 require_once __DIR__ . '/lib/ship.php'; // load the class -- later we will autoload
-require_once __DIR__ . '/functions.php'; // load the class -- later we will autoload
+require_once __DIR__ . '/bootstrap.php'; // load the class -- later we will autoload
 
-$ships = get_ships();
+$shipLoader = new ShipLoader();
+$ships = $shipLoader->getShips(); // ships are created in the get_ships() function and returned as an array of objects.
 
-$errorMessage = '';
+$errorMessage = ''; // initialization
+
+// checks to see if it's a redirect from battle.php which happens only if there is a problem
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
         case 'missing_data':
@@ -43,6 +53,9 @@ if (isset($_GET['error'])) {
     <![endif]-->
 </head>
 
+<!-- ---------------------------------------------- -->
+<!--An area to print out the message. If it exists  -->
+<!-- ---------------------------------------------- -->
 <?php if ($errorMessage): ?>
     <div>
         <?php echo $errorMessage; ?>
@@ -54,6 +67,10 @@ if (isset($_GET['error'])) {
     <div class="page-header">
         <h1>OO Battleships of Space</h1>
     </div>
+
+    <!-- --------- -->
+    <!-- THE TABLE -->
+    <!-- --------- -->
     <table class="table table-hover">
         <caption><i class="fa fa-rocket"></i> These ships are ready for their next Mission</caption>
         <thead>
@@ -66,6 +83,10 @@ if (isset($_GET['error'])) {
         </tr>
         </thead>
         <tbody>
+        <!-- ------------------------------------------------------------------------------------------------ ->
+        <--- the body of the bootstrap table is dynamically populated depending on the number of different ships
+        <--- that are returned from the $ships = get_ships(); call ----------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------------- -->
         <?php foreach ($ships as $ship): ?>
             <tr>
                 <td><?php echo $ship->getName(); ?></td>
@@ -84,6 +105,9 @@ if (isset($_GET['error'])) {
         </tbody>
     </table>
 
+    <!-- ------- -->
+    <!-- THE BOX -->
+    <!-- ------- -->
     <div class="battle-box center-block border">
         <div>
             <form method="POST" action="battle.php">
@@ -113,8 +137,8 @@ if (isset($_GET['error'])) {
                 <button class="btn btn-md btn-danger center-block" type="submit">Engage</button>
             </form>
         </div>
-    </div>
-</div>
+    </div> <!-- battle-box -->
+</div> <!-- end container -->
 </body>
 </html>
 

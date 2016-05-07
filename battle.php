@@ -1,32 +1,40 @@
 <?php
-require __DIR__.'/functions.php';
+require __DIR__ . '/bootstrap.php';
 
-$ships = get_ships();
+$shipLoader = new ShipLoader();
+$ships = $shipLoader->getShips(); // ships are created in the get_ships() function and returned as an array of objects. (again!)
+//print_r($ships); die();
 
+// Grab the values that the form in index.php populated in the POST[] superglobal
 $ship1Name = isset($_POST['ship1_name']) ? $_POST['ship1_name'] : null;
 $ship1Quantity = isset($_POST['ship1_quantity']) ? $_POST['ship1_quantity'] : 1;
 $ship2Name = isset($_POST['ship2_name']) ? $_POST['ship2_name'] : null;
 $ship2Quantity = isset($_POST['ship2_quantity']) ? $_POST['ship2_quantity'] : 1;
 
+// Do some checking and redirect back to index.php if there were problems with the variables passed in, stating the problem.
 if (!$ship1Name || !$ship2Name) {
-    header('Location: /index.php?error=missing_data');
+    header('Location: index.php?error=missing_data');
     die;
 }
 
 if (!isset($ships[$ship1Name]) || !isset($ships[$ship2Name])) {
-    header('Location: /index.php?error=bad_ships');
+    header('Location: index.php?error=bad_ships');
     die;
 }
 
 if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
-    header('Location: /index.php?error=bad_quantities');
+    header('Location: index.php?error=bad_quantities');
     die;
 }
 
+// now, assuming that there were no problems and all variables were passed in,
+// we assign the corresponding Ship objects to the variables $ship1, $ship2
 $ship1 = $ships[$ship1Name];
 $ship2 = $ships[$ship2Name];
 
-$outcome = battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
+// and now we put them into battle!
+$battleManager = new BattleManager();
+$outcome = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
 ?>
 
 <html>
