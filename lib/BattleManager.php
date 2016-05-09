@@ -38,8 +38,12 @@ class BattleManager
             $ship2Health = $ship2Health - ($ship1->getWeaponPower() * $ship1Quantity);
         }
 
+        // update the remainder of the strength for each ship after the battle is done
+        $ship1->setStrength($ship1Health);
+        $ship2->setStrength($ship2Health);
+
         if ($ship1Health <= 0 && $ship2Health <= 0) {
-            // they destroyed each other
+            // they destroyed each other - it's a tie!
             $winningShip = null;
             $losingShip = null;
             $usedJediPowers = $ship1UsedJediPowers || $ship2UsedJediPowers;
