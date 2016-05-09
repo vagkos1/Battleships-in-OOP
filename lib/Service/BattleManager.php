@@ -5,13 +5,13 @@ class BattleManager
     /**
      * The battling logic of our application!
      *
-     * @param Ship $ship1
+     * @param AbstractShip $ship1
      * @param $ship1Quantity
-     * @param Ship $ship2
+     * @param AbstractShip $ship2
      * @param $ship2Quantity
      * @return BattleResult
      */
-    public function battle( Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
+    public function battle( AbstractShip $ship1, $ship1Quantity, AbstractShip $ship2, $ship2Quantity)
     {
         $ship1Health = $ship1->getStrength() * $ship1Quantity;
         $ship2Health = $ship2->getStrength() * $ship2Quantity;
@@ -58,16 +58,13 @@ class BattleManager
         }
 
         return new BattleResult($usedJediPowers, $winningShip, $losingShip);
-
-        // abstract away this magic return array into a new class BattleResult
-//        return array(
-//            'winning_ship' => $winningShip,
-//            'losing_ship' => $losingShip,
-//            'used_jedi_powers' => $usedJediPowers,
-//        );
     }
 
-    private function didJediDestroyShipUsingTheForce(Ship $ship)
+    /**
+     * @param AbstractShip $ship
+     * @return bool
+     */
+    private function didJediDestroyShipUsingTheForce( AbstractShip $ship)
     {
         $jediHeroProbability = $ship->getJediFactor() / 100;
 

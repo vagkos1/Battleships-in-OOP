@@ -11,8 +11,9 @@ require_once __DIR__ . '/bootstrap.php'; // load the class -- later we will auto
 
 $container = new Container($config);
 $shipLoader = $container->getShipLoader();
-
 $ships = $shipLoader->getShips(); // ships are created in the get_ships() function and returned as an array of objects.
+$brokenShip = new BrokenShip('I am so broken');
+$ships[] = $brokenShip;
 
 $errorMessage = ''; // initialization
 
@@ -81,6 +82,7 @@ if (isset($_GET['error'])) {
             <th>Jedi Factor</th>
             <th>Strength</th>
             <th>Status</th>
+            <th>Type</th>
         </tr>
         </thead>
         <tbody>
@@ -101,6 +103,7 @@ if (isset($_GET['error'])) {
                         <i class = "fa fa-cloud">   </i>
                     <?php endif; ?>
                 </td>
+                <td><?php echo $ship->getType(); ?></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

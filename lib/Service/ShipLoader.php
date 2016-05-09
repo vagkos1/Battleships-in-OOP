@@ -11,7 +11,7 @@ class ShipLoader
     }
 
     /**
-     * @return Ship[]
+     * @return AbstractShip[]
      */
     public function getShips() {
         $shipsData = $this->queryForShips();
@@ -24,13 +24,10 @@ class ShipLoader
         return $ships;
     }
 
-    /**
-     * @return array
-     */
     private function queryForShips()
     {
         $pdo = $this->getPDO();
-        $statement = $pdo->prepare('SELECT id, name, weapon_power, jedi_factor, strength, is_under_repair FROM ship');
+        $statement = $pdo->prepare('SELECT id, name, weapon_power, jedi_factor, strength, team FROM ship');
         $statement->execute();
         $shipsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -39,12 +36,12 @@ class ShipLoader
 
     /**
      * @param $id
-     * @return null|Ship
+     * @return null|AbstractShip
      */
     public function findOneShipById($id)
     {
         $pdo = $this->getPDO();
-        $statement = $pdo->prepare('SELECT id, name, weapon_power, jedi_factor, strength, is_under_repair
+        $statement = $pdo->prepare('SELECT id, name, weapon_power, jedi_factor, strength, team
                                     FROM ship WHERE id = :id');
         $statement->execute( array('id' => $id) );
         $shipArray = $statement->fetch(PDO::FETCH_ASSOC);
@@ -58,15 +55,20 @@ class ShipLoader
 
     /**
      * @param array $shipData
-     * @return Ship
+     * @return AbstractShip
      * @throws Exception
      */
     private function createShipFromData(array $shipData)
     {
-        $ship = new Ship($shipData['name']);
+        if ( $shipData['team'] == 'rebel' ) {
+            $ship = new RebelShip($shipData['name']);
+        } else {
+            $ship = new Ship($shipData['name']);
+            $ship->setJediFactor($shipData['jedi_factor']);
+        }
+
         $ship->setId($shipData['id']);
         $ship->setWeaponPower($shipData['weapon_power']);
-        $ship->setJediFactor($shipData['jedi_factor']);
         $ship->setStrength($shipData['strength']);
 
         return $ship;
