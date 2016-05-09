@@ -1,23 +1,28 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
-$shipLoader = new ShipLoader();
+$container = new Container($config);
+$shipLoader = $container->getShipLoader();
+
 $ships = $shipLoader->getShips(); // ships are created in the get_ships() function and returned as an array of objects. (again!)
 //print_r($ships); die();
 
 // Grab the values that the form in index.php populated in the POST[] superglobal
-$ship1Name = isset($_POST['ship1_name']) ? $_POST['ship1_name'] : null;
+$ship1Id = isset($_POST['ship1_id']) ? $_POST['ship1_id'] : null;
 $ship1Quantity = isset($_POST['ship1_quantity']) ? $_POST['ship1_quantity'] : 1;
-$ship2Name = isset($_POST['ship2_name']) ? $_POST['ship2_name'] : null;
+$ship2Id = isset($_POST['ship2_id']) ? $_POST['ship2_id'] : null;
 $ship2Quantity = isset($_POST['ship2_quantity']) ? $_POST['ship2_quantity'] : 1;
 
 // Do some checking and redirect back to index.php if there were problems with the variables passed in, stating the problem.
-if (!$ship1Name || !$ship2Name) {
+if (!$ship1Id || !$ship2Id) {
     header('Location: index.php?error=missing_data');
     die;
 }
 
-if (!isset($ships[$ship1Name]) || !isset($ships[$ship2Name])) {
+$ship1 = $shipLoader->findOneShipById($ship1Id);
+$ship2 = $shipLoader->findOneShipById($ship2Id);
+
+if (!$ship1 || !$ship2) {
     header('Location: index.php?error=bad_ships');
     die;
 }
@@ -27,13 +32,8 @@ if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
     die;
 }
 
-// now, assuming that there were no problems and all variables were passed in,
-// we assign the corresponding Ship objects to the variables $ship1, $ship2
-$ship1 = $ships[$ship1Name];
-$ship2 = $ships[$ship2Name];
-
 // and now we put them into battle!
-$battleManager = new BattleManager();
+$battleManager = $container->getBattleManager();
 $battleResult = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
 ?>
 
