@@ -22,11 +22,6 @@ abstract class AbstractShip
         $this->name = $name;
     }
 
-    public function sayHello()
-    {
-        return 'Hello World!';
-    }
-
     /**
      * @param Ship $someShip
      */

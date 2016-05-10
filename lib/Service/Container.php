@@ -10,6 +10,8 @@ class Container {
 
     private $battleManager;
 
+    private $shipStorage;
+
     public function __construct(array $config)
     {
         $this->config = $config;
@@ -39,10 +41,23 @@ class Container {
     public function getShipLoader()
     {
         if ( $this->shipLoader === null ) {
-            $this->shipLoader = new ShipLoader($this->getPDO());
+            $this->shipLoader = new ShipLoader($this->getShipStorage());
         }
 
         return $this->shipLoader;
+    }
+
+    /**
+     * @return ShipStorageInterface
+     */
+    public function getShipStorage()
+    {
+        if ( $this->shipStorage === null ) {
+//            $this->shipStorage = new PDOShipStorage($this->getPDO());
+            $this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
+        }
+
+        return $this->shipStorage;
     }
 
     /**

@@ -4,12 +4,9 @@
     <list default="true" id="dfd18b31-5d11-4e11-a7d6-74c5a66569c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.php" afterPath="$PROJECT_DIR$/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Model/BattleResult.php" afterPath="$PROJECT_DIR$/lib/Model/BattleResult.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Model/Ship.php" afterPath="$PROJECT_DIR$/lib/Model/Ship.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Service/BattleManager.php" afterPath="$PROJECT_DIR$/lib/Service/BattleManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Model/AbstractShip.php" afterPath="$PROJECT_DIR$/lib/Model/AbstractShip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Service/Container.php" afterPath="$PROJECT_DIR$/lib/Service/Container.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Service/ShipLoader.php" afterPath="$PROJECT_DIR$/lib/Service/ShipLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/init_db.php" afterPath="$PROJECT_DIR$/resources/init_db.php" />
     </list>
     <ignored path="mine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,50 +28,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BattleManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Service/BattleManager.php">
+      <file leaf-file-name="ships.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/ships.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-44.0">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ship.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Model/Ship.php">
+      <file leaf-file-name="PDOShipStorage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Service/PDOShipStorage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.166667">
-              <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="init_db.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/init_db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-38.133335">
-              <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
-                <marker date="1462809982321" expanded="true" signature="560:585" placeholder="DROP TABLE I..." />
-                <marker date="1462809982321" expanded="true" signature="603:622" placeholder="CREATE TABLE..ship..." />
-                <marker date="1462809982321" expanded="true" signature="603:626" placeholder="CREATE TABLE..ship..." />
-                <marker date="1462809982321" expanded="true" signature="603:959" placeholder="CREATE TABLE..ship..." />
-                <marker date="1462809982321" expanded="true" signature="1003:1121" placeholder="INSERT INTO ship..." />
-                <marker date="1462809982321" expanded="true" signature="1138:1257" placeholder="INSERT INTO ship..." />
-                <marker date="1462809982321" expanded="true" signature="1274:1398" placeholder="INSERT INTO ship..." />
-                <marker date="1462809982321" expanded="true" signature="1415:1540" placeholder="INSERT INTO ship..." />
+                <marker date="1462845322842" expanded="true" signature="273:341" placeholder="SELECT id, n..ship..." />
+                <marker date="1462845322842" expanded="true" signature="588:707" placeholder="SELECT id, n..ship..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RebelShip.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Model/RebelShip.php">
+      <file leaf-file-name="JsonFileShipStorage.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/Service/JsonFileShipStorage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4666667">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.54172367">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShipStorageInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Service/ShipStorageInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.866667">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -83,41 +74,9 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.066667">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrokenShip.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Model/BrokenShip.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.2">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BattleResult.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Model/BattleResult.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.233333">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27086183">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-              <folding>
-                <element signature="e#7#106#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -125,13 +84,9 @@
       <file leaf-file-name="ShipLoader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Service/ShipLoader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-41.8">
-              <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-              <folding>
-                <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-                <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-                <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,8 +94,8 @@
       <file leaf-file-name="Container.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Service/Container.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.633333">
-              <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -160,17 +115,22 @@
         <option value="$PROJECT_DIR$/lib/ShipLoader.php" />
         <option value="$PROJECT_DIR$/lib/Container.php" />
         <option value="$PROJECT_DIR$/battle.php" />
-        <option value="$PROJECT_DIR$/lib/Service/Container.php" />
         <option value="$PROJECT_DIR$/resources/init_db.php" />
         <option value="$PROJECT_DIR$/lib/Model/RebelShip.php" />
         <option value="$PROJECT_DIR$/lib/Model/Ship.php" />
         <option value="$PROJECT_DIR$/lib/Model/BattleResult.php" />
-        <option value="$PROJECT_DIR$/lib/Service/ShipLoader.php" />
-        <option value="$PROJECT_DIR$/lib/Model/AbstractShip.php" />
         <option value="$PROJECT_DIR$/lib/Service/BattleManager.php" />
-        <option value="$PROJECT_DIR$/bootstrap.php" />
         <option value="$PROJECT_DIR$/lib/Model/BrokenShip.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/lib/Model/AbstractShip.php" />
+        <option value="$PROJECT_DIR$/resources/ships.json" />
+        <option value="$PROJECT_DIR$/bootstrap.php" />
+        <option value="$PROJECT_DIR$/lib/Service/AbstractShipStorage.php" />
+        <option value="$PROJECT_DIR$/lib/Service/PDOShipStorage.php" />
+        <option value="$PROJECT_DIR$/lib/Service/ShipLoader.php" />
+        <option value="$PROJECT_DIR$/lib/Service/Container.php" />
+        <option value="$PROJECT_DIR$/lib/Service/ShipStorageInterface.php" />
+        <option value="$PROJECT_DIR$/lib/Service/JsonFileShipStorage.php" />
       </list>
     </option>
   </component>
@@ -214,7 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -285,7 +245,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,74 +342,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/init_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="70" />
-          <folding>
-            <marker date="1462809982321" expanded="true" signature="560:585" placeholder="DROP TABLE I..." />
-            <marker date="1462809982321" expanded="true" signature="603:622" placeholder="CREATE TABLE..ship..." />
-            <marker date="1462809982321" expanded="true" signature="603:626" placeholder="CREATE TABLE..ship..." />
-            <marker date="1462809982321" expanded="true" signature="603:959" placeholder="CREATE TABLE..ship..." />
-            <marker date="1462809982321" expanded="true" signature="1003:1121" placeholder="INSERT INTO ship..." />
-            <marker date="1462809982321" expanded="true" signature="1138:1257" placeholder="INSERT INTO ship..." />
-            <marker date="1462809982321" expanded="true" signature="1274:1398" placeholder="INSERT INTO ship..." />
-            <marker date="1462809982321" expanded="true" signature="1415:1540" placeholder="INSERT INTO ship..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/battle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Model/BattleResult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Service/ShipLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/Vagelis/Programming and Tuts/Site building/videos/PHP and MySQL/KNPuniversity/OOP KNPuniversity/OOP-ep2 KNPU/oo-ep2/start/resources/init_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="33" selection-end-column="69" />
-          <folding>
-            <marker date="1447702547000" expanded="true" signature="575:600" placeholder="DROP TABLE I..." />
-            <marker date="1447702547000" expanded="true" signature="618:974" placeholder="CREATE TABLE..ship..." />
-            <marker date="1447702547000" expanded="true" signature="1019:1141" placeholder="INSERT INTO ship..." />
-            <marker date="1447702547000" expanded="true" signature="1158:1281" placeholder="INSERT INTO ship..." />
-            <marker date="1447702547000" expanded="true" signature="1298:1426" placeholder="INSERT INTO ship..." />
-            <marker date="1447702547000" expanded="true" signature="1443:1572" placeholder="INSERT INTO ship..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -521,11 +413,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -582,11 +470,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -628,11 +512,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,11 +554,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -720,11 +596,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,17 +649,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Model/AbstractShip.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="70.23333">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Model/Ship.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.166667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
           <folding />
         </state>
@@ -795,7 +659,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Model/RebelShip.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4666667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
@@ -803,7 +667,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Model/BattleResult.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.233333">
+        <state vertical-scroll-proportion="0.0">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding />
         </state>
@@ -811,35 +675,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Service/BattleManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-44.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Service/Container.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.633333">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Service/ShipLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-41.8">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-          <folding>
-            <marker date="1462813995298" expanded="true" signature="535:603" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1035" placeholder="SELECT id, n..ship..." />
-            <marker date="1462813995298" expanded="true" signature="918:1037" placeholder="SELECT id, n..ship..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/init_db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-38.133335">
+        <state vertical-scroll-proportion="0.0">
           <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
           <folding>
             <marker date="1462809982321" expanded="true" signature="560:585" placeholder="DROP TABLE I..." />
@@ -854,17 +698,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.066667">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Model/BrokenShip.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.2">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
         </state>
@@ -872,11 +708,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27086183">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state vertical-scroll-proportion="-8.1">
+          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
           <folding>
             <element signature="e#7#106#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Model/AbstractShip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="32.833332">
+          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://I:/Vagelis/Programming and Tuts/Site building/videos/PHP and MySQL/KNPuniversity/OOP KNPuniversity/OOP-ep3 KNPU/oo-ep3/start/resources/ships.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1504788">
+          <caret line="5" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ships.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://I:/Vagelis/Programming and Tuts/Site building/videos/PHP and MySQL/KNPuniversity/OOP KNPuniversity/OOP-ep3 KNPU/oo-ep3/start/resources/JsonFileShipStorage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Service/PDOShipStorage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <marker date="1462845322842" expanded="true" signature="273:341" placeholder="SELECT id, n..ship..." />
+            <marker date="1462845322842" expanded="true" signature="588:707" placeholder="SELECT id, n..ship..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Service/ShipLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Service/Container.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Service/ShipStorageInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.866667">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Service/JsonFileShipStorage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54172367">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
